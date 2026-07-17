@@ -8309,7 +8309,7 @@ os.makedirs('/content/eqnet_plus/modules', exist_ok=True)
 
 !ls -R /content/eqnet_plus
 
-python3: can't open file '/content/eqnet_plus/app.py'
+#python3: can't open file '/content/eqnet_plus/app.py'
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile /content/eqnet_plus/app.py
