@@ -15,9 +15,9 @@ MINICONDA_INSTALL_PATH = '/opt/conda'
 
 # Install Miniconda to the specified path
 print(f"Installing Miniconda to {MINICONDA_INSTALL_PATH}...")
-!wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
-!bash miniconda.sh -b -p {MINICONDA_INSTALL_PATH}
-!rm miniconda.sh
+#!wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+#!bash miniconda.sh -b -p {MINICONDA_INSTALL_PATH}
+#!rm miniconda.sh
 
 # Add conda to PATH for the current Python session and subsequent shell commands
 os.environ['PATH'] = f"{MINICONDA_INSTALL_PATH}/bin:" + os.environ['PATH']
