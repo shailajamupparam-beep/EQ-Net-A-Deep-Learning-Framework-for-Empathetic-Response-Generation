@@ -24,7 +24,7 @@ os.environ['PATH'] = f"{MINICONDA_INSTALL_PATH}/bin:" + os.environ['PATH']
 
 # It's good practice to initialize conda, though 'conda run' might be more reliable in Colab.
 # This makes `conda` commands more robust for `!` shells.
-!conda init bash
+#!conda init bash
 
 # Create the conda environment
 # Using `conda run -n eqnetplus` is safer to ensure commands execute within the desired environment
