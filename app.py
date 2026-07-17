@@ -30,7 +30,7 @@ os.environ['PATH'] = f"{MINICONDA_INSTALL_PATH}/bin:" + os.environ['PATH']
 # Using `conda run -n eqnetplus` is safer to ensure commands execute within the desired environment
 # without relying on `conda activate` which doesn't persist well across Colab cells.
 print("Creating conda environment 'eqnetplus'...")
-!conda create -n eqnetplus python=3.10 -y
+#!conda create -n eqnetplus python=3.10 -y
 
 # Note: 'conda activate' doesn't persist across cell executions in Colab.
 # If you need to run commands within the 'eqnetplus' environment,
