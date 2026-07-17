@@ -5673,7 +5673,7 @@ with gr.Blocks() as demo:
 # FIXED LINE: Theme is now safely handled here inside the launch config
 demo.launch(share=True, theme=gr.themes.Soft(primary_hue="blue", secondary_hue="slate"))
 
-The `evaluation` directory needs to contain an `__init__.py` file for Python to recognize it as a package. Let's create it.
+#The `evaluation` directory needs to contain an`__init__.py file for Python to recognize it as a package. Let's create it.
 
 import os
 
