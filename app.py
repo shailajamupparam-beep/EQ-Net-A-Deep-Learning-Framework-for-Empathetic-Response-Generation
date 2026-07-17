@@ -49,23 +49,23 @@ def run_eqnet_analysis(input_data, threshold):
     }
     return results
 
-!conda tos accept --override-channels --channel https://anaconda.com
+#!conda tos accept --override-channels --channel https://anaconda.com
+#
+#!conda tos accept --override-channels --channel https://anaconda.com
+#!conda tos accept --override-channels --channel https://anaconda.com
 
-!conda tos accept --override-channels --channel https://anaconda.com
-!conda tos accept --override-channels --channel https://anaconda.com
+#!conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+#!conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
 
-!conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
-!conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+#pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+#!conda run -n eqnetplus pip install transformers==4.40.0 datasets==2.19.0 \
+ #   nltk spacy fastapi uvicorn \
+  #  scikit-learn pandas numpy matplotlib seaborn \
+   # evaluate sacrebleu rouge-score \
+    #python-dotenv tqdm wandb
 
-!conda run -n eqnetplus pip install transformers==4.40.0 datasets==2.19.0 \
-    nltk spacy fastapi uvicorn \
-    scikit-learn pandas numpy matplotlib seaborn \
-    evaluate sacrebleu rouge-score \
-    python-dotenv tqdm wandb
-
-!conda run -n eqnetplus python -m spacy download en_core_web_sm
+#!conda run -n eqnetplus python -m spacy download en_core_web_sm
 
 !mkdir eqnet_plus && cd eqnet_plus
 !mkdir -p data/{raw,processed}
