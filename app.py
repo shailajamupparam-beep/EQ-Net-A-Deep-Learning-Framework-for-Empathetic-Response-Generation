@@ -8305,37 +8305,37 @@ os.makedirs('/content/eqnet_plus/modules', exist_ok=True)
 
 !pip install flask flask-cors pyngrok
 
-!python /content/eqnet_plus/app.py
+#!python /content/eqnet_plus/app.py
 
-!ls -R /content/eqnet_plus
+#!ls -R /content/eqnet_plus
 
 #python3: can't open file '/content/eqnet_plus/app.py'
 
 # Commented out IPython magic to ensure Python compatibility.
 # %%writefile /content/eqnet_plus/app.py
 # 
-# from flask import Flask, request, jsonify
-# from flask_cors import CORS
-# 
-# app = Flask(__name__)
-# CORS(app)
-# 
-# @app.route("/")
-# def home():
-#     return "EQNet+ Backend Running"
-# 
-# @app.route("/chat", methods=["POST"])
-# def chat():
-#     data = request.json
-#     message = data.get("message","")
-# 
-#     return jsonify({
-#         "response":"Hello! You said: " + message,
-#         "emotion":"Neutral",
-#         "intensity":"Low",
-#         "strategy":"Support",
-#         "cause":"None"
-#     })
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+@app.route("/")
+def home():
+     return "EQNet+ Backend Running"
+ 
+@app.route("/chat", methods=["POST"])
+def chat():
+     data = request.get_json()
+     message = data.get("message","")
+ 
+     return jsonify({
+         "response":"Hello! You said: " + message,
+         "emotion":"Neutral",
+         "intensity":"Low",
+         "strategy":"Support",
+         "cause":"None"
+     })
 # 
 # if __name__=="__main__":
 #     app.run(host="0.0.0.0",port=5000)
