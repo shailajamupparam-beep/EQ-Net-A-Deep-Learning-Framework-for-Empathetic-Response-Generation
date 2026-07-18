@@ -101,7 +101,7 @@ for file_path in files:
         with open(file_path, "w") as f:
             pass
 
-!ls -R eqnet_plus
+#!ls -R eqnet_plus
 
 # config.py — all hyperparameters in one place
 import torch
@@ -155,7 +155,7 @@ class Config:
     LOSS_W_STRATEGY = 0.3
 
     # ── Device
-    DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+        DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 cfg = Config()
 
