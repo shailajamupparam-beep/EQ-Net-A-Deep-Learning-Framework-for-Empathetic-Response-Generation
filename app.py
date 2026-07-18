@@ -67,24 +67,39 @@ def run_eqnet_analysis(input_data, threshold):
 
 #!conda run -n eqnetplus python -m spacy download en_core_web_sm
 
-!mkdir eqnet_plus && cd eqnet_plus
-!mkdir -p data/{raw,processed}
-!mkdir -p models/{emotion_detector,cause_detector,intensity,empathy,response_gen}
-!mkdir -p modules
-!mkdir -p api
-!mkdir -p frontend
-!mkdir -p evaluation
-!mkdir -p logs
-!touch requirements.txt config.py README.md
+import os
 
-!mkdir -p eqnet_plus && cd eqnet_plus
+# Define the directories you need to create
+directories = [
+    "eqnet_plus/data/raw",
+    "eqnet_plus/data/processed",
+    "eqnet_plus/models/emotion_detector",
+    "eqnet_plus/models/cause_detector",
+    "eqnet_plus/models/intensity",
+    "eqnet_plus/models/empathy",
+    "eqnet_plus/models/response_gen",
+    "eqnet_plus/modules",
+    "eqnet_plus/api",
+    "eqnet_plus/frontend",
+    "eqnet_plus/evaluation",
+    "eqnet_plus/logs",
+]
 
-!rm -rf eqnet_plus
+# Create directories if they do not exist
+for folder in directories:
+    os.makedirs(folder, exist_ok=True)
 
-!mkdir -p eqnet_plus/data/{raw,processed}
-!mkdir -p eqnet_plus/models/{emotion_detector,cause_detector,intensity,empathy,response_gen}
-!mkdir -p eqnet_plus/{modules,api,frontend,evaluation,logs}
-!touch eqnet_plus/requirements.txt eqnet_plus/config.py eqnet_plus/README.md
+# Create the blank configuration files
+files = [
+    "eqnet_plus/requirements.txt",
+    "eqnet_plus/config.py",
+    "eqnet_plus/README.md"
+]
+
+for file_path in files:
+    if not os.path.exists(file_path):
+        with open(file_path, "w") as f:
+            pass
 
 !ls -R eqnet_plus
 
