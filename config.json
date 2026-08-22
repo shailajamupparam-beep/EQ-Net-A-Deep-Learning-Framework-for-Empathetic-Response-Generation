@@ -1,0 +1,55 @@
+
+import torch
+from pathlib import Path
+
+class Config:
+    # ── Paths
+    BASE_DIR = Path("/content/eqnet_plus") # Corrected to explicit absolute path
+    DATA_RAW = BASE_DIR / "data/raw"
+    DATA_PROC = BASE_DIR / "data/processed"
+    MODEL_DIR = BASE_DIR / "models"
+
+    # ── Model names
+    ENCODER_MODEL = "bert-base-uncased"
+    DECODER_MODEL = "microsoft/DialoGPT-small"
+
+    # ── Emotion labels (EmpatheticDialogues 32 emotions)
+    EMOTION_LABELS = [
+        "admiring", "afraid", "angry", "annoyed", "anticipating",
+        "anxious", "apprehensive", "ashamed", "caring", "confident",
+        "content", "devastated", "disappointed", "disgusted", "embarrassed",
+        "excited", "faithful", "furious", "grateful", "guilty",
+        "hopeful", "impressed", "jealous", "joyful", "lonely",
+        "nostalgic", "prepared", "proud", "sad", "sentimental",
+        "surprised", "terrified"
+    ]
+    NUM_EMOTIONS = 32
+
+    # ── Intensity levels
+    INTENSITY_LABELS = ["low", "medium", "high"]
+    NUM_INTENSITY = 3
+
+    # ── Empathy strategies
+    EMPATHY_STRATEGIES = [
+        "acknowledgement", "encouragement", "suggestion",
+        "validation", "reassurance"
+    ]
+    NUM_STRATEGIES = 5
+
+    # ── Training
+    MAX_LEN = 128
+    BATCH_SIZE = 16
+    EPOCHS = 5
+    LR = 2e-5
+    WARMUP_STEPS = 500
+    SEED = 42
+
+    # ── Multi-task loss weights
+    LOSS_W_EMOTION = 0.4
+    LOSS_W_INTENSITY = 0.3
+    LOSS_W_STRATEGY = 0.3
+
+    # ── Device
+    DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+
+cfg = Config()
